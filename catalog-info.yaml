@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: "test"
+  title: "test"
+  description: "testing the API golden path"
+  annotations:
+    backstage.io/spectral-ruleset-url: https://raw.githubusercontent.com/janus-api-idp/api-spec-prototype/main/.spectral.yaml
+spec:
+  type: openapi
+  system: system:default/test-system
+  owner: "group:default/backstage-admins"
+  lifecycle: experimental
+  definition:
+    $openapi: https://github.com/janus-api-idp/test/blob/master/specification.yaml

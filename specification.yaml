@@ -1,0 +1,9 @@
+openapi: 3.0.3
+info:
+  title: test
+  description: |-
+    testing the API golden path
+  version: 0.0.1
+servers:
+  - url: "https://microcks-microcks.apps.cluster-8dcp2.dynamic.opentlc.com/rest/test/0.0.1"
+paths: {}
