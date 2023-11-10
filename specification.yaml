@@ -6,4 +6,39 @@ info:
   version: 0.0.1
 servers:
   - url: "https://microcks-microcks.apps.cluster-8dcp2.dynamic.opentlc.com/rest/test/0.0.1"
-paths: {}
+paths:
+  '/temperature':
+    get:
+      summary: View the current temperature
+      description: This operation will show the current temperature
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  '$ref': '#/components/schemas/Temperature'
+              examples:
+                my_test:
+                  value:
+                    - value: 0
+                      unit: Celcius
+components:
+  schemas:
+    Temperature:
+      type: object
+      required:
+        - value
+        - unit
+      properties:
+        value:
+          type: integer
+          format: int64
+        unit:
+          type: string
+          description: Celcius or Fahrenheit
+          enum:
+            - Celcius
+            - Fahrenheit
